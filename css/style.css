@@ -504,10 +504,26 @@ footer {
     header {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 20px; /* Menyesuaikan jarak pinggir untuk HP */
+        align-items: center; 
     }
     nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap; /* Mencegah menu turun ke baris bawah */
+        overflow-x: auto; /* Mengaktifkan fitur scroll/swipe mendatar */
+        justify-content: flex-start; /* Memulai menu dari kiri */
+        gap: 25px; /* Jarak antar menu */
+        padding-bottom: 5px; 
+        -webkit-overflow-scrolling: touch; /* Membuat swipe lebih mulus di iOS/Android */
+        scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+    }
+    /* Menyembunyikan scrollbar di Chrome, Safari, Edge agar UI lebih bersih */
+    nav::-webkit-scrollbar {
+        display: none; 
+    }
+    nav a {
+        white-space: nowrap; /* Mencegah teks terpotong */
     }
     main {
         padding: 20px;
