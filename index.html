@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUPERKAYU - Strong and High Quality</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,7 +15,14 @@
                 <img src="assets/logo.png" alt="SUPERKAYU Logo">
             </a>
         </div>
-        <nav>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Buka Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="nav-links">
             <a href="index.html" class="active">Beranda</a>
             <a href="produk.html">Produk</a>
             <a href="tentang-kami.html">Tentang kami</a>
@@ -23,37 +31,31 @@
     </header>
 
     <main>
-        <!-- Hero Banner -->
         <section class="hero">
             <h1>Strong and High Quality</h1>
             <a href="tentang-kami.html" class="btn-primary">Tentang Kami</a>
         </section>
 
-        <!-- Produk Terlaris -->
         <h2 class="section-title">Produk Terlaris</h2>
         <section class="product-grid">
             <div class="card">
                 <img src="assets/sengon.jpeg" alt="Kayu Sengon">
                 <h3>Sengon</h3>
-                <!-- REVISI: Mengarahkan langsung ke detail Sengon -->
                 <a href="detail.html?id=sengon" class="btn-primary">Lihat Detail</a>
             </div>
             <div class="card">
                 <img src="assets/mindi.jpeg" alt="Kayu Mindi">
                 <h3>Mindi</h3>
-                <!-- REVISI: Mengarahkan langsung ke detail Mindi -->
                 <a href="detail.html?id=mindi" class="btn-primary">Lihat Detail</a>
             </div>
             <div class="card">
                 <img src="assets/jati.jpeg" alt="Kayu Jati">
                 <h3>Jati</h3>
-                <!-- REVISI: Mengarahkan langsung ke detail Jati -->
                 <a href="detail.html?id=jati" class="btn-primary">Lihat Detail</a>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER AKTIF -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -87,9 +89,17 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+            <p>© 2026 SuperKayu. Strong and High Quality.</p>
         </div>
     </footer>
 
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

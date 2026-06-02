@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Produk - SUPERKAYU</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,7 +15,14 @@
                 <img src="assets/logo.png" alt="SUPERKAYU Logo">
             </a>
         </div>
-        <nav>
+        
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Buka Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="nav-links">
             <a href="index.html">Beranda</a>
             <a href="produk.html" class="active">Produk</a>
             <a href="tentang-kami.html">Tentang kami</a>
@@ -51,7 +59,6 @@
         </div>
     </main>
 
-    <!-- FOOTER AKTIF -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -69,8 +76,8 @@
                 </div>
                 <div class="footer-item">
                     <img src="assets/mailputih.png" alt="Email">
-                    <a href="mailto:superkayutmg@gmail.com" style="color: white;">
-                        <p>superkayutmg@gmail.com</p>
+                    <a href="mailto:jericho@gmail.com" style="color: white;">
+                        <p>jericho@gmail.com</p>
                     </a>
                 </div>
             </div>
@@ -79,17 +86,16 @@
                 <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
                 <div class="social-icons">
                     <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
-                    <a href="https://tiktok.com/@super.kayu" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
-                    <a href="https://instagram.com/superkayu.tmg" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                    <a href="https://tiktok.com/@isinodewe" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/isinodewe" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+            <p>© 2026 SuperKayu. Strong and High Quality.</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT DATABASE DINAMIS -->
     <script>
         const products = {
             'sengon': {
@@ -184,6 +190,14 @@
                 window.location.href = "produk.html";
             }
         };
+    </script>
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
