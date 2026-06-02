@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - SUPERKAYU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html" class="active">Produk</a>
+            <a href="tentang-kami.html">Tentang kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="productTitle" class="detail-page-title">Memuat...</h2>
+        
+        <div class="detail-container">
+            <div class="detail-img-container">
+                <img id="productImg" src="" alt="Gambar Produk">
+            </div>
+
+            <div class="detail-section">
+                <h4>Deskripsi</h4>
+                <p id="productDesc">Memuat data...</p>
+            </div>
+
+            <div class="detail-section">
+                <h4>Keunggulan</h4>
+                <p id="productKelebihan">Memuat data...</p>
+            </div>
+
+            <div class="detail-section">
+                <h4>Penggunaan</h4>
+                <p id="productGuna">Memuat data...</p>
+            </div>
+
+            <div class="detail-action">
+                <a id="btnOrder" href="#" target="_blank" class="btn-primary">Order</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:superkayutmg@gmail.com" style="color: white;">
+                        <p>superkayutmg@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@super.kayu" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/superkayu.tmg" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DATABASE DINAMIS -->
+    <script>
+        const products = {
+            'sengon': {
+                title: 'Sengon',
+                img: 'assets/sengon.jpeg',
+                desc: 'Kayu berwarna putih cerah atau cokelat sangat muda. Merupakan jenis kayu lunak yang pertumbuhannya sangat cepat (pohon cepat panen).',
+                keunggulan: 'Bobotnya sangat ringan, teksturnya empuk sehingga sangat mudah dipotong, dan harganya sangat murah.',
+                penggunaan: 'Bahan utama pembuatan kayu lapis (plywood/tripleks), peti kemas/palet kayu, papan cor konstruksi, korek api, dan kerajinan ringan.'
+            },
+            'pinus': {
+                title: 'Pinus',
+                img: 'assets/pinus.jpeg',
+                desc: 'Kayu berwarna krem muda hingga putih kekuningan dengan serat lurus dan memiliki banyak mata kayu alami yang khas.',
+                keunggulan: 'Bobotnya ringan, mudah diproses, memberikan kesan ruangan yang cerah dan estetika ala Skandinavia/minimalis.',
+                penggunaan: 'Furnitur interior modern, dekorasi kafe, kerajinan tangan, palet dekoratif, dan mainan anak-anak.'
+            },
+            'damar': {
+                title: 'Damar',
+                img: 'assets/damar.jpeg',
+                desc: 'Kayu berwarna putih kekuningan hingga cokelat muda pucat dengan tekstur yang sangat halus dan serat yang searah.',
+                keunggulan: 'Mudah dikerjakan secara manual maupun dengan mesin, tidak mudah retak saat dipaku, dan menghasilkan permukaan yang sangat bersih.',
+                penggunaan: 'Tiang rumah, bahan pembuatan kapal ringan, cetakan beton, korek api, dan papan gambar.'
+            },
+            'jati': {
+                title: 'Jati',
+                img: 'assets/jati.jpeg',
+                desc: 'Kayu kelas premium berwarna cokelat emas hingga cokelat tua dengan urat kayu yang sangat indah dan kaya akan minyak alami.',
+                keunggulan: 'Raja segala kayu. Sangat kuat, awet hingga puluhan tahun, tahan cuaca ekstrem, tahan rayap dan jamur tanpa perlu obat pengawet tambahan.',
+                penggunaan: 'Furnitur mewah (indoor/outdoor), lantai parket premium, dekorasi kapal pesiar, ukiran bernilai tinggi, dan kusen eksklusif.'
+            },
+            'meranti': {
+                title: 'Meranti',
+                img: 'assets/meranti.jpeg',
+                desc: 'Variasi lain dari keluarga meranti dengan warna kayu yang lebih terang (putih kekuningan atau cokelat muda pucat).',
+                keunggulan: 'Lebih ringan dari meranti merah, mudah digergaji dan dilem, serta memberikan tampilan warna netral yang mudah dicat.',
+                penggunaan: 'Bahan pembuatan tripleks (plywood), rangka furnitur interior, peti kemas, dan papan sekat ruangan (partisi).'
+            },
+            'akasia': {
+                title: 'Akasia',
+                img: 'assets/akasia.jpeg',
+                desc: 'Kayu bertekstur agak kasar dengan warna cokelat muda hingga cokelat tua kehijauan. Sangat mudah tumbuh di daerah tropis.',
+                keunggulan: 'Memiliki daya tahan yang sangat baik terhadap serangan jamur dan serangga (rayap), serta memiliki kerapatan fisik yang padat dan bobot yang berat.',
+                penggunaan: 'Konstruksi berat, bantalan rel kereta api, tiang pancang, furnitur luar ruangan (outdoor), dan bahan baku pulp/kertas.'
+            },
+            'merantimerah': {
+                title: 'Merah Meranti',
+                /* REVISI MERANTI MERAH PNG DI DATABASE JAVASCRIPT */
+                img: 'assets/merantimerah.png', 
+                desc: 'Kayu khas Kalimantan dengan warna merah muda hingga merah tua keunguan. Teksturnya agak kasar namun seratnya cenderung lurus.',
+                keunggulan: 'Struktur kayunya stabil, tidak mudah menyusut atau memuai, mudah dikeringkan, dan memiliki ketahanan yang baik untuk area semi-terbuka.',
+                penggunaan: 'Kusen pintu dan jendela, penutup lantai (parquet), dinding bangunan rumah kayu, serta bahan pembuatan kapal.'
+            },
+            'kruing': {
+                title: 'Kruing',
+                img: 'assets/kruing.jpeg',
+                desc: 'Kayu keras berwarna cokelat kemerahan hingga cokelat kelabu. Pohonnya banyak ditemukan di hutan hujan tropis Asia Tenggara.',
+                keunggulan: 'Sangat kuat (Kelas Kuat II-I) dan keras, tahan terhadap benturan fisik, serta memiliki harga yang relatif lebih ekonomis dibanding kayu jati.',
+                penggunaan: 'Konstruksi berat seperti bantalan rel, jembatan, rangka atap, bak truk, dan lantai kontainer.'
+            },
+            'mindi': {
+                title: 'Mindi',
+                img: 'assets/mindi.jpeg',
+                desc: 'Kayu berwarna cokelat muda kemerahan dengan serat lurus yang sangat jelas dan corak yang estetis (mirip kayu ek/oak).',
+                keunggulan: 'Bobotnya cenderung ringan hingga sedang, sangat mudah dipotong dan dibentuk, serta memiliki serat permukaan yang halus untuk proses finishing.',
+                penggunaan: 'Furnitur interior minimalis, kerajinan tangan, pintu panel, dan pelapis dinding (veneer).'
+            },
+            'mahoni': {
+                title: 'Mahoni',
+                img: 'assets/mahoni.jpeg',
+                desc: 'Kayu berwarna merah muda keemasan yang akan berubah menjadi cokelat tua kemerahan seiring bertambahnya usia kayu. Seratnya halus dan lurus.',
+                keunggulan: 'Tingkat penyusutan sangat rendah (stabil), tidak mudah melengkung saat dikeringkan, tekstur halus, dan sangat mudah diukir.',
+                penggunaan: 'Furnitur ukiran klasik Jepara, alat musik premium (gitar, piano), interior mobil mewah, dan kerajinan tangan.'
+            }
+        };
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (productId && products[productId]) {
+                const data = products[productId];
+                document.title = data.title + " - SUPERKAYU";
+                document.getElementById('productTitle').innerText = data.title;
+                document.getElementById('productImg').src = data.img;
+                document.getElementById('productDesc').innerText = data.desc;
+                document.getElementById('productKelebihan').innerText = data.keunggulan;
+                document.getElementById('productGuna').innerText = data.penggunaan;
+                
+                const waMessage = encodeURIComponent("Halo Admin SUPERKAYU, saya tertarik untuk memesan kayu " + data.title + ".");
+                document.getElementById('btnOrder').href = "https://wa.me/6281311582220?text=" + waMessage;
+            } else {
+                window.location.href = "produk.html";
+            }
+        };
+    </script>
+</body>
+</html>
