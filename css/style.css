@@ -91,6 +91,11 @@ nav a:hover::after, nav a.active::after {
     width: 100%;
 }
 
+/* Sembunyikan Tombol Menu di Desktop */
+.menu-toggle {
+    display: none; 
+}
+
 /* Main Content */
 main {
     flex: 1;
@@ -452,7 +457,6 @@ footer {
     text-align: center;
     font-size: 42px;
     margin-bottom: 30px;
-    /* REVISI: Mengubah font ke Poppins, menebalkan, dan menjadikannya hitam */
     font-family: 'Poppins', sans-serif; 
     color: var(--text-dark); 
     font-weight: 600;
@@ -499,32 +503,77 @@ footer {
     font-size: 16px;
 }
 
-/* Responsive */
+/* ===============================
+   RESPONSIVE MOBILE (Hamburger Menu)
+   =============================== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px; /* Menyesuaikan jarak pinggir untuk HP */
+        padding: 15px 20px; 
+        flex-direction: row; 
+        justify-content: space-between;
         align-items: center; 
     }
-    nav {
+    
+    .logo img {
+        height: 35px; 
+    }
+
+    /* CSS Pure Hamburger Button */
+    .menu-toggle {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001; 
+    }
+
+    .menu-toggle .bar {
+        height: 3px;
         width: 100%;
-        display: flex;
-        flex-wrap: nowrap; /* Mencegah menu turun ke baris bawah */
-        overflow-x: auto; /* Mengaktifkan fitur scroll/swipe mendatar */
-        justify-content: flex-start; /* Memulai menu dari kiri */
-        gap: 25px; /* Jarak antar menu */
-        padding-bottom: 5px; 
-        -webkit-overflow-scrolling: touch; /* Membuat swipe lebih mulus di iOS/Android */
-        scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+        background-color: #333; 
+        border-radius: 2px;
+        transition: all 0.3s ease; 
     }
-    /* Menyembunyikan scrollbar di Chrome, Safari, Edge agar UI lebih bersih */
-    nav::-webkit-scrollbar {
+
+    /* Dropdown Navigation */
+    nav {
         display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98); 
+        padding: 10px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05); 
+        border-top: 1px solid #eee;
     }
+
+    nav.active {
+        display: flex; 
+    }
+
     nav a {
-        white-space: nowrap; /* Mencegah teks terpotong */
+        width: 100%;
+        text-align: center; 
+        padding: 15px 0;
+        margin: 0;
+        border-bottom: 1px solid #f9f9f9; 
     }
+
+    nav a:last-child {
+        border-bottom: none; 
+    }
+
+    nav a::after {
+        display: none !important; 
+    }
+
     main {
         padding: 20px;
     }
