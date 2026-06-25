@@ -37,10 +37,11 @@
     </header>
 
     <main>
-        <h2 class="section-title">Produk Kami</h2>
+        <h2 class="section-title reveal">Produk Kami</h2>
         
+        <!-- HALAMAN 1 -->
         <div id="page-1" class="product-list-container">
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/sengon.jpeg" alt="Sengon" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Sengon</h3>
@@ -49,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/pinus.jpeg" alt="Pinus" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Pinus</h3>
@@ -58,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/damar.jpeg" alt="Damar" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Damar</h3>
@@ -67,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/jati.jpeg" alt="Jati" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Jati</h3>
@@ -76,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/meranti.jpeg" alt="Meranti" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Meranti</h3>
@@ -86,8 +87,9 @@
             </div>
         </div>
 
+        <!-- HALAMAN 2 -->
         <div id="page-2" class="product-list-container" style="display: none;">
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/akasia.jpeg" alt="Akasia" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Akasia</h3>
@@ -96,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/merantimerah.png" alt="Meranti Merah" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Meranti Merah</h3>
@@ -105,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/kruing.jpeg" alt="Kruing" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Kruing</h3>
@@ -114,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/mindi.jpeg" alt="Mindi" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Mindi</h3>
@@ -123,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="product-list-card">
+            <div class="product-list-card reveal">
                 <img src="assets/mahoni.jpeg" alt="Mahoni" class="product-list-img">
                 <div class="product-list-info">
                     <h3>Mahoni</h3>
@@ -133,13 +135,14 @@
             </div>
         </div>
 
-        <div class="pagination">
+        <div class="pagination reveal">
             <button onclick="switchPage(1)" id="btn-1" class="active">1</button>
             <button onclick="switchPage(2)" id="btn-2">2</button>
         </div>
 
     </main>
 
+    <!-- FOOTER AKTIF -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -186,15 +189,13 @@
             document.getElementById('page-' + pageNumber).style.display = 'flex';
             document.getElementById('btn-' + pageNumber).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Re-trigger scroll reveal for the new page
+            if (typeof reveal === 'function') {
+                setTimeout(reveal, 100); 
+            }
         }
     </script>
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    <script src="js/site-interactions.js"></script>
 </body>
 </html>

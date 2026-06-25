@@ -1,0 +1,1245 @@
+style.css
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Variabel Warna SuperKayu */
+:root {
+    --bg-cream: #FFFCF7; 
+    --text-dark: #333333; 
+    --text-brown: #5C4033; 
+    --primary-green: #0F753C; 
+    --primary-green-hover: #0a5229;
+    --footer-brown: #8A674B; 
+    --footer-text: #FFFFFF;
+}
+
+/* Reset & Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-brown);
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: #FFFFFF;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px; 
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-brown);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--text-brown);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 40px 50px;
+}
+
+/* Section Hero (Beranda) */
+.hero {
+    background: linear-gradient(rgba(87, 62, 37, 0.7), rgba(87, 62, 37, 0.7)), url('../assets/home.png') center/cover no-repeat;
+    height: 350px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Button Global */
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-green-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(15, 117, 60, 0.3);
+}
+
+/* Card Produk (Beranda) */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; 
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+/* Footer Aktif */
+footer {
+    background-color: var(--footer-brown);
+    color: var(--footer-text);
+    padding: 40px 50px 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-right h4 {
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.footer-right p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px; 
+    align-items: center; 
+}
+
+.social-icons img {
+    height: 32px; 
+    width: auto; 
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img[alt="TikTok"] {
+    transform: scale(1.25); 
+}
+
+.social-icons img[alt="Instagram"] {
+    transform: scale(1.15); 
+}
+
+.social-icons a:hover img {
+    transform: translateY(-5px);
+}
+
+.social-icons a:hover img[alt="TikTok"] {
+    transform: scale(1.25) translateY(-5px);
+}
+
+.social-icons a:hover img[alt="Instagram"] {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+/* ===============================
+   CSS HALAMAN TENTANG KAMI
+   =============================== */
+.about-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.about-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.about-quote {
+    font-size: 32px;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-brown);
+    margin-bottom: 30px;
+}
+.about-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+.about-list {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.about-list li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+.about-list strong {
+    color: var(--text-brown);
+}
+
+/* ===============================
+   CSS HALAMAN KONTAK (INTERAKTIF)
+   =============================== */
+.contact-container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.contact-subtitle {
+    font-size: 28px;
+    color: var(--text-brown);
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+.contact-desc {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.contact-info-group {
+    margin-bottom: 10px;
+}
+.contact-info-group h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+.contact-interactive {
+    display: flex;
+    align-items: center; 
+    gap: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    padding: 12px 15px;
+    border-radius: 10px; 
+    margin-left: -15px; 
+}
+.contact-interactive:hover {
+    background-color: rgba(138, 103, 75, 0.08); 
+    transform: translateX(10px); 
+    color: var(--text-brown); 
+}
+.contact-interactive img {
+    width: 26px; 
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.contact-interactive:hover img {
+    transform: scale(1.2) rotate(8deg); 
+}
+.contact-item-text {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ===============================
+   CSS HALAMAN PRODUK & PAGINASI
+   =============================== */
+.product-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.product-list-card {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+.product-list-card:hover {
+    transform: translateY(-5px);
+}
+.product-list-img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+}
+.product-list-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.product-list-info h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+.product-list-info p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.product-list-info .btn-primary {
+    align-self: center;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+.pagination button {
+    background-color: #E0E0E0;
+    color: var(--text-dark);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.pagination button.active {
+    background-color: var(--text-brown);
+    color: white;
+}
+.pagination button:hover:not(.active) {
+    background-color: #d1d1d1;
+}
+
+/* ===============================
+   CSS HALAMAN DETAIL PRODUK
+   =============================== */
+.detail-page-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+    /* REVISI: Mengubah font ke Poppins, menebalkan, dan menjadikannya hitam */
+    font-family: 'Poppins', sans-serif; 
+    color: var(--text-dark); 
+    font-weight: 600;
+}
+.detail-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.detail-img-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.detail-img-container img {
+    width: 300px; 
+    height: 220px; 
+    object-fit: cover;
+    border-radius: 12px;
+}
+.detail-section {
+    margin-bottom: 25px;
+}
+.detail-section h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+.detail-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+.detail-action {
+    text-align: center;
+    margin-top: 40px;
+}
+.detail-action .btn-primary {
+    padding: 12px 40px;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px; /* Menyesuaikan jarak pinggir untuk HP */
+        align-items: center; 
+    }
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap; /* Mencegah menu turun ke baris bawah */
+        overflow-x: auto; /* Mengaktifkan fitur scroll/swipe mendatar */
+        justify-content: flex-start; /* Memulai menu dari kiri */
+        gap: 25px; /* Jarak antar menu */
+        padding-bottom: 5px; 
+        -webkit-overflow-scrolling: touch; /* Membuat swipe lebih mulus di iOS/Android */
+        scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+    }
+    /* Menyembunyikan scrollbar di Chrome, Safari, Edge agar UI lebih bersih */
+    nav::-webkit-scrollbar {
+        display: none; 
+    }
+    nav a {
+        white-space: nowrap; /* Mencegah teks terpotong */
+    }
+    main {
+        padding: 20px;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+    .product-list-card {
+        flex-direction: column;
+    }
+    .product-list-img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+detail.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - SUPERKAYU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html" class="active">Produk</a>
+            <a href="tentang-kami.html">Tentang kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="productTitle" class="detail-page-title">Memuat...</h2>
+        
+        <div class="detail-container">
+            <div class="detail-img-container">
+                <img id="productImg" src="" alt="Gambar Produk">
+            </div>
+
+            <div class="detail-section">
+                <h4>Deskripsi</h4>
+                <p id="productDesc">Memuat data...</p>
+            </div>
+
+            <div class="detail-section">
+                <h4>Keunggulan</h4>
+                <p id="productKelebihan">Memuat data...</p>
+            </div>
+
+            <div class="detail-section">
+                <h4>Penggunaan</h4>
+                <p id="productGuna">Memuat data...</p>
+            </div>
+
+            <div class="detail-action">
+                <a id="btnOrder" href="#" target="_blank" class="btn-primary">Order</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:jericho@gmail.com" style="color: white;">
+                        <p>jericho@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@isinodewe" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/isinodewe" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT DATABASE DINAMIS -->
+    <script>
+        const products = {
+            'sengon': {
+                title: 'Sengon',
+                img: 'assets/sengon.jpeg',
+                desc: 'Kayu berwarna putih cerah atau cokelat sangat muda. Merupakan jenis kayu lunak yang pertumbuhannya sangat cepat (pohon cepat panen).',
+                keunggulan: 'Bobotnya sangat ringan, teksturnya empuk sehingga sangat mudah dipotong, dan harganya sangat murah.',
+                penggunaan: 'Bahan utama pembuatan kayu lapis (plywood/tripleks), peti kemas/palet kayu, papan cor konstruksi, korek api, dan kerajinan ringan.'
+            },
+            'pinus': {
+                title: 'Pinus',
+                img: 'assets/pinus.jpeg',
+                desc: 'Kayu berwarna krem muda hingga putih kekuningan dengan serat lurus dan memiliki banyak mata kayu alami yang khas.',
+                keunggulan: 'Bobotnya ringan, mudah diproses, memberikan kesan ruangan yang cerah dan estetika ala Skandinavia/minimalis.',
+                penggunaan: 'Furnitur interior modern, dekorasi kafe, kerajinan tangan, palet dekoratif, dan mainan anak-anak.'
+            },
+            'damar': {
+                title: 'Damar',
+                img: 'assets/damar.jpeg',
+                desc: 'Kayu berwarna putih kekuningan hingga cokelat muda pucat dengan tekstur yang sangat halus dan serat yang searah.',
+                keunggulan: 'Mudah dikerjakan secara manual maupun dengan mesin, tidak mudah retak saat dipaku, dan menghasilkan permukaan yang sangat bersih.',
+                penggunaan: 'Tiang rumah, bahan pembuatan kapal ringan, cetakan beton, korek api, dan papan gambar.'
+            },
+            'jati': {
+                title: 'Jati',
+                img: 'assets/jati.jpeg',
+                desc: 'Kayu kelas premium berwarna cokelat emas hingga cokelat tua dengan urat kayu yang sangat indah dan kaya akan minyak alami.',
+                keunggulan: 'Raja segala kayu. Sangat kuat, awet hingga puluhan tahun, tahan cuaca ekstrem, tahan rayap dan jamur tanpa perlu obat pengawet tambahan.',
+                penggunaan: 'Furnitur mewah (indoor/outdoor), lantai parket premium, dekorasi kapal pesiar, ukiran bernilai tinggi, dan kusen eksklusif.'
+            },
+            'meranti': {
+                title: 'Meranti',
+                img: 'assets/meranti.jpeg',
+                desc: 'Variasi lain dari keluarga meranti dengan warna kayu yang lebih terang (putih kekuningan atau cokelat muda pucat).',
+                keunggulan: 'Lebih ringan dari meranti merah, mudah digergaji dan dilem, serta memberikan tampilan warna netral yang mudah dicat.',
+                penggunaan: 'Bahan pembuatan tripleks (plywood), rangka furnitur interior, peti kemas, dan papan sekat ruangan (partisi).'
+            },
+            'akasia': {
+                title: 'Akasia',
+                img: 'assets/akasia.jpeg',
+                desc: 'Kayu bertekstur agak kasar dengan warna cokelat muda hingga cokelat tua kehijauan. Sangat mudah tumbuh di daerah tropis.',
+                keunggulan: 'Memiliki daya tahan yang sangat baik terhadap serangan jamur dan serangga (rayap), serta memiliki kerapatan fisik yang padat dan bobot yang berat.',
+                penggunaan: 'Konstruksi berat, bantalan rel kereta api, tiang pancang, furnitur luar ruangan (outdoor), dan bahan baku pulp/kertas.'
+            },
+            'merantimerah': {
+                title: 'Merah Meranti',
+                /* REVISI MERANTI MERAH PNG DI DATABASE JAVASCRIPT */
+                img: 'assets/merantimerah.png', 
+                desc: 'Kayu khas Kalimantan dengan warna merah muda hingga merah tua keunguan. Teksturnya agak kasar namun seratnya cenderung lurus.',
+                keunggulan: 'Struktur kayunya stabil, tidak mudah menyusut atau memuai, mudah dikeringkan, dan memiliki ketahanan yang baik untuk area semi-terbuka.',
+                penggunaan: 'Kusen pintu dan jendela, penutup lantai (parquet), dinding bangunan rumah kayu, serta bahan pembuatan kapal.'
+            },
+            'kruing': {
+                title: 'Kruing',
+                img: 'assets/kruing.jpeg',
+                desc: 'Kayu keras berwarna cokelat kemerahan hingga cokelat kelabu. Pohonnya banyak ditemukan di hutan hujan tropis Asia Tenggara.',
+                keunggulan: 'Sangat kuat (Kelas Kuat II-I) dan keras, tahan terhadap benturan fisik, serta memiliki harga yang relatif lebih ekonomis dibanding kayu jati.',
+                penggunaan: 'Konstruksi berat seperti bantalan rel, jembatan, rangka atap, bak truk, dan lantai kontainer.'
+            },
+            'mindi': {
+                title: 'Mindi',
+                img: 'assets/mindi.jpeg',
+                desc: 'Kayu berwarna cokelat muda kemerahan dengan serat lurus yang sangat jelas dan corak yang estetis (mirip kayu ek/oak).',
+                keunggulan: 'Bobotnya cenderung ringan hingga sedang, sangat mudah dipotong dan dibentuk, serta memiliki serat permukaan yang halus untuk proses finishing.',
+                penggunaan: 'Furnitur interior minimalis, kerajinan tangan, pintu panel, dan pelapis dinding (veneer).'
+            },
+            'mahoni': {
+                title: 'Mahoni',
+                img: 'assets/mahoni.jpeg',
+                desc: 'Kayu berwarna merah muda keemasan yang akan berubah menjadi cokelat tua kemerahan seiring bertambahnya usia kayu. Seratnya halus dan lurus.',
+                keunggulan: 'Tingkat penyusutan sangat rendah (stabil), tidak mudah melengkung saat dikeringkan, tekstur halus, dan sangat mudah diukir.',
+                penggunaan: 'Furnitur ukiran klasik Jepara, alat musik premium (gitar, piano), interior mobil mewah, dan kerajinan tangan.'
+            }
+        };
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (productId && products[productId]) {
+                const data = products[productId];
+                document.title = data.title + " - SUPERKAYU";
+                document.getElementById('productTitle').innerText = data.title;
+                document.getElementById('productImg').src = data.img;
+                document.getElementById('productDesc').innerText = data.desc;
+                document.getElementById('productKelebihan').innerText = data.keunggulan;
+                document.getElementById('productGuna').innerText = data.penggunaan;
+                
+                const waMessage = encodeURIComponent("Halo Admin SUPERKAYU, saya tertarik untuk memesan kayu " + data.title + ".");
+                document.getElementById('btnOrder').href = "https://wa.me/6281311582220?text=" + waMessage;
+            } else {
+                window.location.href = "produk.html";
+            }
+        };
+    </script>
+</body>
+</html>
+
+
+
+index.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERKAYU - Strong and High Quality</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang-kami.html">Tentang kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <h1>Strong and High Quality</h1>
+            <a href="tentang-kami.html" class="btn-primary">Tentang Kami</a>
+        </section>
+
+        <!-- Produk Terlaris -->
+        <h2 class="section-title">Produk Terlaris</h2>
+        <section class="product-grid">
+            <div class="card">
+                <img src="assets/sengon.jpeg" alt="Kayu Sengon">
+                <h3>Sengon</h3>
+                <!-- REVISI: Mengarahkan langsung ke detail Sengon -->
+                <a href="detail.html?id=sengon" class="btn-primary">Lihat Detail</a>
+            </div>
+            <div class="card">
+                <img src="assets/mindi.jpeg" alt="Kayu Mindi">
+                <h3>Mindi</h3>
+                <!-- REVISI: Mengarahkan langsung ke detail Mindi -->
+                <a href="detail.html?id=mindi" class="btn-primary">Lihat Detail</a>
+            </div>
+            <div class="card">
+                <img src="assets/jati.jpeg" alt="Kayu Jati">
+                <h3>Jati</h3>
+                <!-- REVISI: Mengarahkan langsung ke detail Jati -->
+                <a href="detail.html?id=jati" class="btn-primary">Lihat Detail</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:superkayutmg@gmail.com" style="color: white;">
+                        <p>superkayutmg@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@super.kayu" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/superkayu.tmg" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+kontak.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - SUPERKAYU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang-kami.html">Tentang kami</a>
+            <a href="kontak.html" class="active">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">Kontak kami</h2>
+        
+        <div class="contact-container">
+            <h3 class="contact-subtitle">Hubungi Kami</h3>
+            <p class="contact-desc">Punya pertanyaan seputar ketersediaan kayu atau ingin berkonsultasi mengenai kebutuhan proyek Anda? Jangan ragu untuk menghubungi kami melalui tautan aktif di bawah ini.</p>
+            
+            <div class="contact-info-group">
+                <h4>Layanan Pelanggan (Telepon & WhatsApp)</h4>
+                <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" class="contact-interactive">
+                    <img src="assets/wahitam.png" alt="WhatsApp">
+                    <div class="contact-item-text">
+                        <strong>+62 813-1158-2220</strong><br>
+                        Jam Operasional: Senin-Sabtu, 08.00-17.00
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-info-group">
+                <h4>Email</h4>
+                <a href="mailto:superkayutmg@gmail.com" class="contact-interactive">
+                    <img src="assets/mailhitam.png" alt="Email">
+                    <div class="contact-item-text">
+                        <strong>superkayutmg@gmail.com</strong>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-info-group">
+                <h4>Lokasi</h4>
+               
+                <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" class="contact-interactive">
+                    <img src="assets/lokasihitam.png" alt="Lokasi">
+                    <div class="contact-item-text">
+                        Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>
+                        Kabupaten Temanggung, Jawa Tengah 56222
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-info-group">
+                <h4>Ikuti Kami di Media Sosial</h4>
+                <div style="display: flex; flex-direction: column;">
+                    <a href="https://instagram.com/superkayu.tmg" target="_blank" class="contact-interactive">
+                        <img src="assets/ighitam.png" alt="Instagram"> 
+                        <div class="contact-item-text">@superkayu.tmg</div>
+                    </a>
+                    <a href="https://tiktok.com/@super.kayu" target="_blank" class="contact-interactive">
+                        <img src="assets/tiktokhitam.png" alt="TikTok"> 
+                        <div class="contact-item-text">@super.kayu</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:superkayutmg@gmail.com" style="color: white;">
+                        <p>superkayutmg@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@super.kayu" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/superkayu.tmg" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
+produk.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Kami - SUPERKAYU</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-list-info .btn-primary {
+            align-self: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html" class="active">Produk</a>
+            <a href="tentang-kami.html">Tentang kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="section-title">Produk Kami</h2>
+        
+        <!-- HALAMAN 1 -->
+        <div id="page-1" class="product-list-container">
+            <div class="product-list-card">
+                <img src="assets/sengon.jpeg" alt="Sengon" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Sengon</h3>
+                    <p>Kayu berwarna putih cerah atau cokelat sangat muda. Merupakan jenis kayu lunak yang pertumbuhannya sangat cepat (pohon cepat panen).</p>
+                    <a href="detail.html?id=sengon" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/pinus.jpeg" alt="Pinus" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Pinus</h3>
+                    <p>Kayu berwarna krem muda hingga putih kekuningan dengan serat lurus dan memiliki banyak mata kayu alami yang khas.</p>
+                    <a href="detail.html?id=pinus" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/damar.jpeg" alt="Damar" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Damar</h3>
+                    <p>Kayu berwarna putih kekuningan hingga cokelat muda pucat dengan tekstur yang sangat halus dan serat yang searah.</p>
+                    <a href="detail.html?id=damar" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/jati.jpeg" alt="Jati" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Jati</h3>
+                    <p>Kayu kelas premium berwarna cokelat emas hingga cokelat tua dengan urat kayu yang sangat indah dan kaya akan minyak alami.</p>
+                    <a href="detail.html?id=jati" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/meranti.jpeg" alt="Meranti" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Meranti</h3>
+                    <p>Variasi lain dari keluarga meranti dengan warna kayu yang lebih terang (putih kekuningan atau cokelat muda pucat).</p>
+                    <a href="detail.html?id=meranti" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN 2 -->
+        <div id="page-2" class="product-list-container" style="display: none;">
+            <div class="product-list-card">
+                <img src="assets/akasia.jpeg" alt="Akasia" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Akasia</h3>
+                    <p>Kayu bertekstur agak kasar dengan warna cokelat muda hingga cokelat tua kehijauan. Sangat mudah tumbuh di daerah tropis.</p>
+                    <a href="detail.html?id=akasia" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <!-- REVISI MERANTI MERAH PNG -->
+                <img src="assets/merantimerah.png" alt="Meranti Merah" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Meranti Merah</h3>
+                    <p>Kayu khas Kalimantan dengan warna merah muda hingga merah tua keunguan. Teksturnya agak kasar namun seratnya cenderung lurus.</p>
+                    <a href="detail.html?id=merantimerah" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/kruing.jpeg" alt="Kruing" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Kruing</h3>
+                    <p>Kayu keras berwarna cokelat kemerahan hingga cokelat kelabu. Pohonnya banyak ditemukan di hutan hujan tropis Asia Tenggara.</p>
+                    <a href="detail.html?id=kruing" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/mindi.jpeg" alt="Mindi" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Mindi</h3>
+                    <p>Kayu berwarna cokelat muda kemerahan dengan serat lurus yang sangat jelas dan corak yang estetis (mirip kayu ek/oak).</p>
+                    <a href="detail.html?id=mindi" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-list-card">
+                <img src="assets/mahoni.jpeg" alt="Mahoni" class="product-list-img">
+                <div class="product-list-info">
+                    <h3>Mahoni</h3>
+                    <p>Kayu berwarna merah muda keemasan yang akan berubah menjadi cokelat tua kemerahan seiring bertambahnya usia kayu. Seratnya halus dan lurus.</p>
+                    <a href="detail.html?id=mahoni" class="btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button onclick="switchPage(1)" id="btn-1" class="active">1</button>
+            <button onclick="switchPage(2)" id="btn-2">2</button>
+        </div>
+
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:jericho@gmail.com" style="color: white;">
+                        <p>jericho@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@isinodewe" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/isinodewe" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchPage(pageNumber) {
+            document.getElementById('page-1').style.display = 'none';
+            document.getElementById('page-2').style.display = 'none';
+            document.getElementById('btn-1').classList.remove('active');
+            document.getElementById('btn-2').classList.remove('active');
+            document.getElementById('page-' + pageNumber).style.display = 'flex';
+            document.getElementById('btn-' + pageNumber).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+tentang-kami.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - SUPERKAYU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="SUPERKAYU Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="tentang-kami.html" class="active">Tentang kami</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="about-title">Tentang kami</h2>
+        
+        <div class="about-container">
+            <h3 class="about-quote">"Strong and High Quality"</h3>
+            
+            <div class="about-content">
+                <p>Setiap mahakarya konstruksi dan furnitur selalu bermula dari material dasar yang unggul. Di SUPERKAYU, kami memahami bahwa kekuatan dan kualitas proyek Anda sangat bergantung pada bahan baku yang digunakan. Oleh karena itu, komitmen utama kami selalu konsisten "kita menyiapkan kualitas mutu kayu premium dan sesuai standar."</p>
+                
+                <p>Lebih dari sekadar penyedia material, SUPERKAYU memadukan profesionalisme bisnis dengan tanggung jawab pelestarian alam. Kami hadir untuk memberikan solusi kayu kelas satu yang tidak hanya kokoh, tetapi juga 100% legal, transparan, dan etis.</p>
+                
+                <p>Sebagai mitra terpercaya untuk berbagai skala proyek, inilah nilai lebih yang kami bawa untuk Anda:</p>
+                
+                <ol class="about-list">
+                    <li><strong>Legalitas & Dokumentasi Transparan:</strong> Keamanan transaksi Anda adalah prioritas kami. SUPERKAYU beroperasi secara resmi dengan sertifikasi SVLK (Sistem Verifikasi Legalitas Kayu). Anda tidak perlu khawatir, karena setiap pengiriman selalu dilengkapi dengan Surat Ijin Tebang dan Faktur Kayu yang sah.</li>
+                    <li><strong>Kualitas Premium Tanpa Kompromi:</strong> Setiap batang kayu yang keluar dari tempat kami telah melewati proses seleksi yang ketat untuk memastikan mutu standar tinggi yang siap memenuhi spesifikasi kebutuhan bangunan atau furnitur Anda.</li>
+                    <li><strong>Komitmen Go Green:</strong> Kami percaya bahwa bisnis yang baik adalah bisnis yang menjaga alam. Kami memastikan sumber kayu kami dikelola dengan prinsip keberlanjutan (sustainability) demi menjaga kelestarian ekosistem dan hutan jangka panjang.</li>
+                </ol>
+
+                <p>Jadikan SUPERKAYU sebagai mitra andalan untuk segala kebutuhan material proyek Anda. Bersama kami, Anda mendapatkan kualitas tanpa kompromi dan kepastian hukum yang jelas, sekaligus turut merawat bumi kita.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER AKTIF -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-item">
+                    <img src="assets/lokasiputih.png" alt="Lokasi">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Perintis+Kemerdekaan+No.41B,+Jurang+1,+Jurang,+Kec.+Temanggung,+Kabupaten+Temanggung,+Jawa+Tengah+56222" target="_blank" style="color: white;">
+                        <p>Jl. Perintis Kemerdekaan No.41B, Jurang 1, Jurang, Kec. Temanggung,<br>Kabupaten Temanggung, Jawa Tengah 56222</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/waputih.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda%20dan%20ingin%20berkonsultasi%20lebih%20lanjut." target="_blank" style="color: white;">
+                        <p>+62 813-1158-2220</p>
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <img src="assets/mailputih.png" alt="Email">
+                    <a href="mailto:superkayutmg@gmail.com" style="color: white;">
+                        <p>superkayutmg@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4>Tentang Kami</h4>
+                <p>SUPERKAYU Strong and High Quality. Mitra terpercaya penyedia material kayu premium untuk proyek konstruksi dan furnitur Anda. 100% legal bersertifikat SVLK, transparan, dan menjunjung tinggi prinsip kelestarian lingkungan (Go Green).</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281311582220?text=Halo%20Admin%20SUPERKAYU,%20saya%20tertarik%20dengan%20produk%20material%20kayu%20Anda." target="_blank"><img src="assets/waputih.png" alt="WhatsApp"></a>
+                    <a href="https://tiktok.com/@super.kayu" target="_blank"><img src="assets/tiktokputih.png" alt="TikTok"></a>
+                    <a href="https://instagram.com/superkayu.tmg" target="_blank"><img src="assets/igputih.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperKayu. Strong and High Quality.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

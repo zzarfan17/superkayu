@@ -31,24 +31,26 @@
     </header>
 
     <main>
+        <!-- Hero Banner -->
         <section class="hero">
             <h1>Strong and High Quality</h1>
             <a href="tentang-kami.html" class="btn-primary">Tentang Kami</a>
         </section>
 
-        <h2 class="section-title">Produk Terlaris</h2>
+        <!-- Produk Terlaris -->
+        <h2 class="section-title reveal">Produk Terlaris</h2>
         <section class="product-grid">
-            <div class="card">
+            <div class="card reveal">
                 <img src="assets/sengon.jpeg" alt="Kayu Sengon">
                 <h3>Sengon</h3>
                 <a href="detail.html?id=sengon" class="btn-primary">Lihat Detail</a>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="assets/mindi.jpeg" alt="Kayu Mindi">
                 <h3>Mindi</h3>
                 <a href="detail.html?id=mindi" class="btn-primary">Lihat Detail</a>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <img src="assets/jati.jpeg" alt="Kayu Jati">
                 <h3>Jati</h3>
                 <a href="detail.html?id=jati" class="btn-primary">Lihat Detail</a>
@@ -56,6 +58,7 @@
         </section>
     </main>
 
+    <!-- FOOTER AKTIF -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -93,13 +96,7 @@
         </div>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="js/site-interactions.js"></script>
 </body>
 </html>

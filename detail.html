@@ -31,9 +31,9 @@
     </header>
 
     <main>
-        <h2 id="productTitle" class="detail-page-title">Memuat...</h2>
+        <h2 id="productTitle" class="detail-page-title reveal">Memuat...</h2>
         
-        <div class="detail-container">
+        <div class="detail-container reveal">
             <div class="detail-img-container">
                 <img id="productImg" src="" alt="Gambar Produk">
             </div>
@@ -59,6 +59,7 @@
         </div>
     </main>
 
+    <!-- FOOTER AKTIF -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -96,6 +97,7 @@
         </div>
     </footer>
 
+    <!-- JAVASCRIPT DATABASE DINAMIS -->
     <script>
         const products = {
             'sengon': {
@@ -142,7 +144,6 @@
             },
             'merantimerah': {
                 title: 'Merah Meranti',
-                /* REVISI MERANTI MERAH PNG DI DATABASE JAVASCRIPT */
                 img: 'assets/merantimerah.png', 
                 desc: 'Kayu khas Kalimantan dengan warna merah muda hingga merah tua keunguan. Teksturnya agak kasar namun seratnya cenderung lurus.',
                 keunggulan: 'Struktur kayunya stabil, tidak mudah menyusut atau memuai, mudah dikeringkan, dan memiliki ketahanan yang baik untuk area semi-terbuka.',
@@ -190,14 +191,11 @@
                 window.location.href = "produk.html";
             }
         };
+        // Timeout untuk menunggu gambar termuat sebelum reveal
+        setTimeout(() => {
+            if (typeof reveal === 'function') reveal();
+        }, 200);
     </script>
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+    <script src="js/site-interactions.js"></script>
 </body>
 </html>
